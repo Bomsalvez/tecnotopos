@@ -808,39 +808,53 @@ body {
         display: flex;
     }
     
+    .hero {
+        min-height: 100vh;
+        padding: var(--spacing-lg) 0;
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-xl);
         padding: 0 var(--spacing-md);
+        max-width: 100%;
     }
     
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
         margin-bottom: var(--spacing-sm);
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
     
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         margin-bottom: var(--spacing-sm);
+        word-wrap: break-word;
     }
     
     .hero-description {
-        font-size: 1rem;
-        line-height: 1.6;
-        margin-bottom: var(--spacing-md);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: var(--spacing-lg);
+        word-wrap: break-word;
+        max-width: 100%;
     }
     
     .logo-hero {
-        width: 300px;
-        height: 300px;
-        margin-left: 0;
+        width: 200px;
+        height: 200px;
         margin: 0 auto;
+        display: block;
     }
     
     .hero-visual {
         order: -1;
-        margin-bottom: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     
     .content-grid {
@@ -871,26 +885,34 @@ body {
 
 /* Responsividade para telas muito pequenas */
 @media (max-width: 480px) {
+    .hero {
+        padding: var(--spacing-md) 0;
+    }
+    
     .hero-content {
         padding: 0 var(--spacing-sm);
-        gap: var(--spacing-md);
+        gap: var(--spacing-lg);
     }
     
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.2;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.3;
     }
     
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.6;
+        padding: 0 var(--spacing-xs);
     }
     
     .logo-hero {
-        width: 250px;
-        height: 250px;
+        width: 150px;
+        height: 150px;
     }
     
     .cta-button {
@@ -914,6 +936,46 @@ body {
     .logo-hero {
         width: 450px;
         height: 450px;
+    }
+}
+
+/* Responsividade específica para iPhone 12 Pro e similares */
+@media (max-width: 390px) {
+    .hero {
+        padding: var(--spacing-sm) 0;
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-xs);
+        gap: var(--spacing-md);
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+        line-height: 1.1;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-xs);
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        margin-bottom: var(--spacing-md);
+        padding: 0;
+    }
+    
+    .logo-hero {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .hero-visual {
+        margin-bottom: var(--spacing-md);
     }
 }
 

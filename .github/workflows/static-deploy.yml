@@ -1,0 +1,81 @@
+name: Static Site Deployment
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  # Job de validação
+  validate:
+    name: Validate Files
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check HTML files
+      run: |
+        if [ ! -f "src/index.html" ]; then
+          echo "❌ index.html not found in src/"
+          exit 1
+        fi
+        echo "✅ HTML files validated"
+        
+    - name: Check CSS files
+      run: |
+        if [ ! -d "src/style" ]; then
+          echo "❌ style directory not found"
+          exit 1
+        fi
+        echo "✅ CSS files validated"
+
+  # Job de deploy para GitHub Pages
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: validate
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Copy files to deployment directory
+      run: |
+        mkdir -p dist
+        cp -r src/* dist/
+        echo "📁 Files copied to dist/"
+        
+    - name: Upload to GitHub Pages
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: dist/
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  # Job de notificação
+  notify:
+    name: Deployment Status
+    runs-on: ubuntu-latest
+    needs: [validate, deploy]
+    if: always()
+    
+    steps:
+    - name: Notify deployment status
+      run: |
+        if [ "${{ needs.deploy.result }}" == "success" ]; then
+          echo "✅ Deployment successful!"
+          echo "🌐 Site deployed to: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+        elif [ "${{ needs.validate.result }}" == "failure" ]; then
+          echo "❌ Validation failed!"
+        else
+          echo "❌ Deployment failed!"
+        fi 

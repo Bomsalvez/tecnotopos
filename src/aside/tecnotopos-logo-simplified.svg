@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fundo transparente -->
+  <rect width="400" height="400" fill="none"/>
+  
+  <!-- Gradientes para efeito premium -->
+  <defs>
+    <linearGradient id="gradientePrincipal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#183153" /> <!-- Azul escuro -->
+      <stop offset="100%" stop-color="#0C1D33" /> <!-- Azul escuro mais profundo -->
+    </linearGradient>
+    <linearGradient id="gradienteSecundario" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A9AAAC" /> <!-- Cinza metálico claro -->
+      <stop offset="100%" stop-color="#757679" /> <!-- Cinza metálico escuro -->
+    </linearGradient>
+    <linearGradient id="gradienteDestaque" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4AFF8F" /> <!-- Verde neon -->
+      <stop offset="100%" stop-color="#00CF61" /> <!-- Verde neon mais escuro -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Forma base, inspirada em chip/circuito -->
+  <path d="M120,180 L180,120 L220,120 L280,180 L280,220 L220,280 L180,280 L120,220 Z" 
+        fill="url(#gradientePrincipal)" 
+        stroke="#0C1D33" 
+        stroke-width="2"/>
+  
+  <!-- Elemento circular externo - agora em cinza metálico -->
+  <circle cx="200" cy="200" r="95" 
+          fill="none" 
+          stroke="url(#gradienteSecundario)" 
+          stroke-width="3" 
+          stroke-dasharray="3,6" 
+          stroke-opacity="0.8"/>
+  
+  <!-- Elemento "T" estilizado principal -->
+  <path d="M170,160 L230,160 M200,160 L200,240" 
+        stroke="#FFFFFF" 
+        stroke-width="12" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Pontos de conexão representando nós tecnológicos em cinza metálico -->
+  <circle cx="200" cy="200" r="6" fill="#A9AAAC"/>
+  <circle cx="240" cy="175" r="6" fill="#A9AAAC"/>
+  <circle cx="160" cy="175" r="6" fill="#A9AAAC"/>
+  <circle cx="240" cy="225" r="6" fill="#A9AAAC"/>
+  <circle cx="160" cy="225" r="6" fill="#A9AAAC"/>
+  
+  <!-- Linhas de conexão entre os pontos -->
+  <path d="M200,200 L240,175 M200,200 L160,175 M200,200 L240,225 M200,200 L160,225" 
+        stroke="#A9AAAC" 
+        stroke-width="2" 
+        stroke-opacity="0.8"/>
+  
+  <!-- Texto "TECNOTOPOS" em cinza metálico -->
+  <text x="200" y="330" 
+        font-family="'Montserrat', 'Segoe UI', sans-serif" 
+        font-size="24" 
+        font-weight="700" 
+        text-anchor="middle" 
+        fill="#757679" 
+        letter-spacing="2">TECNOTOPOS</text>
+</svg>

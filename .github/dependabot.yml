@@ -1,0 +1,19 @@
+version: 2
+updates:
+  # Manter GitHub Actions atualizados
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+
+  # Manter dependências npm atualizadas
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "bomsalvez"
+    assignees:
+      - "bomsalvez" 

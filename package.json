@@ -1,0 +1,20 @@
+{
+  "name": "tecnotopos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "echo 'Starting development server...' && python -m http.server 8000 --directory src/ || npx serve src/ -p 8000",
+    "validate": "echo 'Validating project structure...' && test -f src/index.html && echo '✅ index.html found'",
+    "test": "echo 'Running tests...' && npm run validate",
+    "lint": "echo 'Linting...' && npx tsc --noEmit",
+    "clean": "rm -rf dist/ && echo '✅ Cleaned dist directory'",
+    "prepare": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": true
+}

@@ -1,0 +1,25 @@
+[
+  {
+    "titulo": "💲 MetaKyasshu - Sistema de Controle Financeiro",
+    "descricao": "Sistema de Controle Financeiro Compartilhado desenvolvido com:",
+    "stack": [
+      { "label": "Backend", "valor": "Java, Spring Boot, Spring Security" },
+      { "label": "Frontend", "valor": "Angular" },
+      { "label": "Banco de Dados", "valor": "MySQL" },
+      { "label": "Em desenvolvimento", "valor": "Versão mobile com Flutter" },
+      { "label": "Containerização", "valor": "Docker" }
+    ],
+    "link": "https://bomsalvez.github.io/metakyasshu-docs/"
+  },
+  {
+    "titulo": "🏡 Sistema de Gestão Quilombo Pena Branca",
+    "descricao": "Plataforma especializada para gestão de comunidade tradicional:",
+    "stack": [
+      { "label": "Backend", "valor": "Java, Spring Boot, Spring Security" },
+      { "label": "Frontend", "valor": "Angular" },
+      { "label": "Banco de Dados", "valor": "MySQL" },
+      { "label": "Containerização", "valor": "Docker" }
+    ],
+    "link": "https://bomsalvez.github.io/quilombo-docs"
+  }
+] 

@@ -9,3 +9,18 @@ yarn-error.log*
 .pnp.js
 
 .vscode/*
+/.idea/*
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+*.swp
+*.swo
+*~
